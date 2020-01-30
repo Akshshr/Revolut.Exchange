@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="tes"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:context=".app.base.WelcomeFragment">
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/d22"
+            android:gravity="center"
+            android:id="@+id/selecter"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/Text.Bright.16spBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/d22"
+                android:text="@string/title" />
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:id="@+id/row1"
+                android:focusable="true"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/d12"
+                android:background="?selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/flag1"
+                    android:layout_width="@dimen/d48"
+                    android:layout_height="@dimen/d48"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/d8"
+                    android:backgroundTintMode="multiply"
+                    android:contentDescription="@string/cd_currency_image" />
+
+                <TextView
+                    android:id="@+id/name1"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="@dimen/d32"
+                    style="@style/Text.Bright.16spBold"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    tools:text="ort item" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:id="@+id/row2"
+                android:layout_marginTop="@dimen/d12"
+                android:background="?selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/flag2"
+                    android:layout_width="@dimen/d48"
+                    android:layout_height="@dimen/d48"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/d8"
+                    android:backgroundTintMode="multiply"
+                    android:contentDescription="@string/cd_currency_image" />
+
+                <TextView
+                    android:id="@+id/name2"
+                    android:layout_margin="@dimen/d32"
+                    android:layout_width="wrap_content"
+                    style="@style/Text.Bright.16spBold"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    tools:text="ort item" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>
