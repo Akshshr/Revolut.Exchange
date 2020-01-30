@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="test"
+            type="String" />
+
+        <variable
+            name="currenyviewmodel"
+            type="com.revolutexchange.app.main.viewModels.CurrenyAdapterViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/rowParent"
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:layout_marginStart="@dimen/d8"
+            android:layout_marginTop="@dimen/d6"
+            android:layout_marginEnd="@dimen/d8"
+            android:layout_marginBottom="@dimen/d6"
+            android:clickable="true"
+            android:elevation="2dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardElevation="2dp"
+            app:elevation="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/currencyFlag"
+                    android:layout_width="@dimen/d40"
+                    android:layout_height="@dimen/d40"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/d8"
+                    android:backgroundTintMode="multiply"
+                    android:contentDescription="@string/cd_currency_image" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical"
+                    android:layout_toEndOf="@+id/currencyFlag"
+                    android:layout_height="wrap_content"
+                    >
+
+                <TextView
+                    android:id="@+id/currencyFullName"
+                    android:layout_width="wrap_content"
+                    style="@style/Text.Bright.16spBold"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    tools:text="ort item" />
+
+                <TextView
+                    android:id="@+id/currencyName"
+                    style="@style/Text.Bright.10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="@dimen/d2"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    tools:text="ort item" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/currencyInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/d8"
+                    android:paddingEnd="@dimen/d8"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/currencySymbol"
+                    style="@style/Text.Bright.16spMedium"
+                    android:inputType="numberDecimal"
+                    tools:text="10000" />
+
+                <TextView
+                    android:id="@+id/currencySymbol"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    style="@style/Text.Bright.12spMediumHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/d8"
+                    android:textColor="@color/white"
+                    tools:text="$" />
+
+                <ImageView
+                    android:id="@+id/editable"
+                    android:src="@drawable/ic_star"
+                    android:visibility="invisible"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="@dimen/d12"
+                    android:layout_height="@dimen/d12"
+                    android:layout_margin="@dimen/d4"
+                    android:backgroundTintMode="multiply"
+                    android:contentDescription="@string/cd_currency_image" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+
+</layout>

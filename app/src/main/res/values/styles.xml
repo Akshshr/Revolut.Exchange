@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="AppWidget"></style>
+
+    <style name="AppWidget.Toolbar">
+        <item name="android:textColorPrimary">@color/textPrimaryBright</item>
+        <!-- Used in Theme.AppCompat -->
+        <item name="android:textColorPrimaryInverse">@color/textPrimaryDark</item>
+        <!-- Used in Theme.AppCompat.Light -->
+        <item name="actionMenuTextColor">@color/textPrimaryBright</item>
+        <item name="android:textColorSecondary">@color/textPrimaryBright</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:contentInsetStart">0dp</item>
+        <item name="android:contentInsetLeft">0dp</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="contentInsetLeft">0dp</item>
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <style name="AppWidget.DialogTransition">
+        <item name="android:windowEnterAnimation">@anim/dialog_expand_less_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_expand_more_out</item>
+    </style>
+
+
+</resources>

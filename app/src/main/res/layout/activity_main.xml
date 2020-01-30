@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="test"
+            type="String" />
+
+        <variable
+            name="loading"
+            type="Boolean" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.revolutexchange.app.main.MainActivity">
+
+        <com.revolutexchange.app.widget.MainToolbar
+            android:id="@+id/toolbar"
+            style="@style/AppWidget.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/colorPrimaryTransparent"
+            android:paddingTop="@dimen/d22" />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_view_loading"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:visibility="@{loading ? View.VISIBLE :  View.GONE }"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="lottie_loading.json"
+            app:lottie_loop="true"
+            app:lottie_scale="1" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            app:fastScrollEnabled="false" />
+
+
+    </RelativeLayout>
+
+
+</layout>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Revolut Exchange</string>
+
+    <!-- Snack Bar -->
+    <string name="button_dismiss">Dismiss</string>
+
+
+
+    <!-- Content Description Main -->
+    <string name="cd_currency_image">Flag of country</string>
+
+
+    <!-- Welcome Fragment -->
+    <string name="title">Please select a preferred currency of your choice</string>
+
+
+    <!--    ERROR-->
+    <string name="error_generic">Something went wrong, please try again in a bit!</string>
+
+
+    <!--   Fun with Flags  -->
+<!--    https://www.countryflags.io/:country_code/:style/:size.png  -->
+
+
+</resources>
