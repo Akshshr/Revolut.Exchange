@@ -18,7 +18,7 @@ public class AppPreferences {
     }
 
 
-//    PREFERED CURRENCY
+//PREFERED CURRENCY
     public Preference<String> getPreferredCurrency() {
         return rxSharedPreferences.getString(Keys.PREFERED_CURRENCY, "");
     }
@@ -28,7 +28,7 @@ public class AppPreferences {
     }
 
 
-//    IS FIRST TIME USER
+//IS FIRST TIME USER
     public Preference<Boolean> getIsFirstTimeUser() {
         return rxSharedPreferences.getBoolean(Keys.IS_FIRST_TIME, false);
     }
@@ -38,9 +38,7 @@ public class AppPreferences {
     }
 
 
-
-
-    //    KEYS
+//KEYS
     private class Keys {
         static final String PREFERED_CURRENCY = "prefered_currency";
         static final String IS_FIRST_TIME = "isFirstTimeUse";

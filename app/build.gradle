@@ -62,6 +62,7 @@ dependencies {
 
     implementation 'com.google.android.material:material:1.0.0'
 
+    //Android X
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.percentlayout:percentlayout:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -71,37 +72,34 @@ dependencies {
 
     implementation 'com.google.code.gson:gson:2.8.5'
 
-    // Because RxAndroid releases are few and far between, it is recommended you also
-    // explicitly depend on RxJava's latest version for bug fixes and new features.
 
-
-    implementation 'io.reactivex:rxandroid:1.2.1'
-
+    //Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
+    //Retrofit and RX
     implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava:$rootProject.ext.retrofitVersion"
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+
+    //RX preferences
     implementation 'com.f2prateek.rx.preferences2:rx-preferences:2.0.0'
 
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
 
-    // Annotation processor
-    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
-    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    //Android Architecture
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
-
-    // optional - ReactiveStreams support for LiveData
     implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
-
-    // Saved state module for ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$savedstate_version"
 
+    //Lottie AirBnb
     implementation "com.airbnb.android:lottie:$rootProject.ext.lottieVersion"
+
+    //Basic
     implementation 'org.apache.commons:commons-lang3:3.6'
     implementation 'org.apache.commons:commons-text:1.8'
     implementation 'net.danlew:android.joda:2.10.3'
