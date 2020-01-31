@@ -22,6 +22,7 @@ public class CurrenyAdapterViewModel extends BaseObservable {
 
     private static final String FLAG_URL = "https://www.countryflags.io/%1$s/flat/64.png";
     private static final String PATTERN_2DECIMAL_ROUND = "##.00";
+    private Double mPrice = 1.0;
 
     public void setCurrencyAdapterData(CurrencyAdapter context, Rates rates,
                                        RowCurrenciesBinding binding,
@@ -32,9 +33,9 @@ public class CurrenyAdapterViewModel extends BaseObservable {
         binding.currencyName.setText(rates.getName());
 
         DecimalFormat df = new DecimalFormat(PATTERN_2DECIMAL_ROUND);
-        binding.currencyInput.setText(String.valueOf(df.format(rates.getPrice())));
+        binding.currencyInput.setText(String.valueOf(df.format(rates.getPrice() * mPrice)));
 
-        String ambitiousKey = rates.getName().substring(0,2);
+        String ambitiousKey = rates.getName().substring(0, 2);
 
         Glide.with(binding.getRoot())
                 .load(String.format(FLAG_URL, ambitiousKey))
@@ -60,7 +61,9 @@ public class CurrenyAdapterViewModel extends BaseObservable {
                 public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                     if (position == 0 && binding.currencyInput.hasFocus()) {
                         binding.currencyInput.removeTextChangedListener(this);
-                        context.setCurrencyData(setDataForFirstRom(charSequence.toString(), binding));
+                        mPrice = Double.parseDouble(charSequence.toString());
+                        setDataForFirstRom(charSequence.toString(), binding);
+                        context.setCurrencyData();
                         binding.currencyInput.addTextChangedListener(this);
 //                        binding.currencyInput.clearFocus();
                     }
@@ -71,7 +74,8 @@ public class CurrenyAdapterViewModel extends BaseObservable {
 
                 }
             });
-        }else{
+        } else {
+            binding.editable.setVisibility(View.INVISIBLE);
             binding.currencyInput.setEnabled(false);
         }
     }

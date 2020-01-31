@@ -23,7 +23,6 @@ import static androidx.constraintlayout.widget.Constraints.TAG;
 public class CurrencyAdapter extends RecyclerView.Adapter<CurrencyAdapter.ViewHolder> {
 
     private final ExchangeData exchangeData;
-
     private PublishSubject<Rates> onCurrencySelectSubject = PublishSubject.create();
     private CurrenyAdapterViewModel mCurrencyViewModel;
 
@@ -60,16 +59,7 @@ public class CurrencyAdapter extends RecyclerView.Adapter<CurrencyAdapter.ViewHo
         holder.bind(exchangeData.getRateList().get(position), position);
     }
 
-    public void setCurrencyData(double priceValue) {
-        if (exchangeData.getRateList().size() > 0) {
-            exchangeData.getRateList().get(0).setPrice(priceValue);
-        }
-        for (int i = 1; i < exchangeData.getRateList().size(); i++) {
-            double price = exchangeData.getRateList().get(i).getPrice();
-            Log.d(TAG, "setCurrencyData: " + "" + price + "*" + priceValue);
-            int priceValueGet = ((int) priceValue);
-            exchangeData.getRateList().get(i).setPrice(price * priceValueGet);
-        }
+    public void setCurrencyData() {
         notifyDataSetChanged();
     }
 
