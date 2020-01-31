@@ -14,13 +14,16 @@ import com.revolutexchange.api.model.Rates;
 import com.revolutexchange.app.main.adapter.CurrencyAdapter;
 import com.revolutexchange.databinding.RowCurrenciesBinding;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.text.DecimalFormat;
 
 import rx.subjects.PublishSubject;
 
 public class CurrenyAdapterViewModel extends BaseObservable {
 
-    private static final String FLAG_URL = "https://www.countryflags.io/%1$s/flat/64.png";
+    private static final String FLAG_SIZE = "64";
+    private static final String FLAG_URL = "https://www.countryflags.io/%1$s/flat/%2$s.png";
     private static final String PATTERN_2DECIMAL_ROUND = "##.00";
     private Double mPrice = 1.0;
 
@@ -35,10 +38,10 @@ public class CurrenyAdapterViewModel extends BaseObservable {
         DecimalFormat df = new DecimalFormat(PATTERN_2DECIMAL_ROUND);
         binding.currencyInput.setText(String.valueOf(df.format(rates.getPrice() * mPrice)));
 
-        String ambitiousKey = rates.getName().substring(0, 2);
+        String countryKey = rates.getName().substring(0, 2);
 
         Glide.with(binding.getRoot())
-                .load(String.format(FLAG_URL, ambitiousKey))
+                .load(String.format(FLAG_URL, countryKey.toLowerCase(), FLAG_SIZE))
                 .centerCrop()
                 .error(R.drawable.ic_error)
                 .into(binding.currencyFlag);
@@ -59,13 +62,12 @@ public class CurrenyAdapterViewModel extends BaseObservable {
 
                 @Override
                 public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                    if (position == 0 && binding.currencyInput.hasFocus()) {
+                    if (binding.currencyInput.hasFocus()) {
                         binding.currencyInput.removeTextChangedListener(this);
                         mPrice = Double.parseDouble(charSequence.toString());
                         setDataForFirstRom(charSequence.toString(), binding);
                         context.setCurrencyData();
                         binding.currencyInput.addTextChangedListener(this);
-//                        binding.currencyInput.clearFocus();
                     }
                 }
 
