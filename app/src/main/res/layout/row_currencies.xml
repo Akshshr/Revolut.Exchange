@@ -2,13 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <data>
-
-        <variable
-            name="test"
-            type="String" />
-
         <variable
             name="currenyviewmodel"
             type="com.revolutexchange.app.main.viewModels.CurrenyAdapterViewModel" />
@@ -63,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    tools:text="ort item" />
+                    tools:text="Display item" />
 
                 <TextView
                     android:id="@+id/currencyName"
@@ -72,7 +66,7 @@
                     android:layout_marginTop="@dimen/d2"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    tools:text="ort item" />
+                    tools:text="Display item" />
 
                 </LinearLayout>
 
@@ -82,11 +76,12 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="@dimen/d8"
                     android:paddingEnd="@dimen/d8"
+                    android:maxLength="10"
                     android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/currencySymbol"
+                    android:layout_toStartOf="@+id/currencySymbol"
                     style="@style/Text.Bright.16spMedium"
                     android:inputType="numberDecimal"
-                    tools:text="10000" />
+                    tools:text="10022300" />
 
                 <TextView
                     android:id="@+id/currencySymbol"
